@@ -29,7 +29,7 @@ public class AuthenticationService {
         return userRepository.save(user);
     }
 
-    public User authentication(LoginUserDto input) {
+    public User authenticate(LoginUserDto input) {
         User user = userRepository.findByEmail(input.getEmail())
                 .orElseThrow(() -> new RuntimeException("User not found"));
         authenticationManager
