@@ -37,8 +37,11 @@ public class StockService {
         }
     }
 
-    public void deleteStockById(Long id) {
-        stockRepository.deleteById(id);
+    public void deleteStockByUsernameAndIndex(String username, String stockIndex) {
+        Optional<Stock> stockOpt = stockRepository.findByUsernameAndStockIndex(username, stockIndex);
+        if (stockOpt.isPresent()) {
+            stockRepository.delete(stockOpt.get());
+        }
     }
 
     public List<Stock> getStockByUsername(String username) {
