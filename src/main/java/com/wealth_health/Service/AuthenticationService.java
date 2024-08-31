@@ -3,12 +3,14 @@ package com.wealth_health.Service;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
 
 import com.wealth_health.Dto.LoginUserDto;
 import com.wealth_health.Dto.RegisterUserDto;
 import com.wealth_health.Model.User;
 import com.wealth_health.Repository.UserRepository;
 
+@Service
 public class AuthenticationService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
